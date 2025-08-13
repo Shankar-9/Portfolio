@@ -1,0 +1,38 @@
+.projects { padding: 90px 0; background: var(--surface-alt); border-top: 1px solid var(--border); }
+.section-header { text-align: center; margin-bottom: 2rem; }
+.section-header h2 { font-size: 2rem; font-weight: 800; color: #0b1220; }
+.section-header p { color: var(--muted); }
+
+.project-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.filter-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); color: #9ca3af; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-weight: 500; backdrop-filter: blur(10px); }
+.filter-btn:hover { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #3b82f6; }
+.filter-btn.active { background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-color: #3b82f6; color: white; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+.project-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative; padding: 1.25rem 1.25rem 1.5rem; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); }
+.project-card.featured { border-color: #3b82f6; }
+
+.project-content h3 { font-size: 1.3rem; font-weight: 700; color: #0b1220; margin: 0 0 0.5rem; }
+.project-desc { color: #475569; min-height: 48px; margin-bottom: .75rem; }
+.project-technologies { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: .75rem; }
+.tech-tag { background: #f1f5f9; color: #334155; border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; }
+.project-actions { display: flex; gap: .5rem; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem 1rem; border-radius: 8px; border: none; background: #3b82f6; color: #fff; cursor: pointer; font-weight: 700; }
+.btn.small { padding: .45rem .8rem; }
+.btn.outline { background: #fff; color: #0b1220; border: 1px solid var(--border); }
+.btn.ghost { background: transparent; color: #0b1220; border: 1px dashed var(--border); }
+.btn:hover { filter: brightness(.95); }
+
+/* Modal */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.35); backdrop-filter: blur(4px); display: grid; place-items: center; z-index: 60; }
+.modal { width: min(720px, 92vw); background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.modal-body.only { padding: 1.25rem; }
+.modal-body h3 { margin: 0 0 .5rem; color: #0b1220; }
+.modal-actions { display: flex; gap: .5rem; margin-top: 1rem; }
+
+@media (max-width: 900px){
+  .projects-grid { grid-template-columns: 1fr; }
+}

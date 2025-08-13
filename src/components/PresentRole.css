@@ -1,0 +1,18 @@
+.present { padding: 90px 0; background: var(--surface); /* removed top divider to blend */ }
+.present-header { text-align: center; margin-bottom: 2rem; }
+.present-header h2 { font-size: 2rem; font-weight: 800; color: #0b1220; }
+.present-header p { color: var(--muted); }
+.present-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; }
+/* Blend media with background */
+.present-media .logo-wrap { display: grid; place-items: center; padding: 0; background: transparent; border: none; border-radius: 0; margin-bottom: 0; box-shadow: none; }
+.ti-logo { width: 180px; height: auto; }
+.present-media .photo-wrap { overflow: hidden; border-radius: 0; border: none; box-shadow: none; background: transparent; padding: 0; }
+.present-media .photo-wrap img { width: 100%; height: auto; display: block; }
+.present-content h3 { margin: 0; color: #0b1220; }
+.present-content h4 { margin: .25rem 0 1rem; color: #2563eb; font-weight: 800; }
+.present-content p { color: var(--muted); }
+.present-points { margin: 1rem 0; padding-left: 1.25rem; color: #0f172a; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .25rem; }
+.chips span { background: #eef2ff; color: #1d4ed8; padding: .35rem .6rem; border-radius: 999px; border: 1px solid #c7d2fe; font-weight: 700; font-size: .85rem; }
+
+@media (max-width: 900px){ .present-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,11 @@
+.skills { padding: 90px 0; background: var(--surface); border-top: 1px solid var(--border); }
+.section-header { text-align: center; margin-bottom: 2rem; }
+.section-header h2 { font-size: 2rem; font-weight: 800; color: #0b1220; }
+.section-header p { color: var(--muted); }
+.skills-section { margin-bottom: 2rem; }
+.skills-section h3 { color: #0b1220; margin: 0 0 .75rem; font-size: 1.2rem; font-weight: 800; }
+.skills-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+.icon-card { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; box-shadow: 0 8px 18px rgba(2,6,23,.05); transition: transform .15s ease; }
+.icon-card:hover { transform: translateY(-2px); }
+.icon { font-size: 2rem; line-height: 1; display: grid; place-items: center; margin-bottom: .5rem; }
+.icon-name { color: var(--text); font-weight: 600; font-size: .95rem; }
