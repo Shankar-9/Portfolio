@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaUser, FaCode, FaLightbulb } from 'react-icons/fa';
+import { FaDownload, FaUser, FaCode, FaLightbulb, FaGraduationCap, FaBriefcase, FaSchool, FaUniversity, FaMapPin } from 'react-icons/fa';
 import './About.css';
 import { profile } from '../profile';
 
@@ -40,11 +40,56 @@ const About = () => {
   ];
 
   const journeyData = [
-    { year: '2019', title: 'School', desc: '10 CGPA' },
-    { year: '2021', title: 'Intermediate', desc: '98.1%' },
-    { year: '2024', title: 'Internship', desc: 'Texas Instruments' },
-    { year: '2025', title: 'B.Tech', desc: 'NIT Raipur' },
-    { year: '2025', title: 'Texas Instruments', desc: 'Joined as Developer' },
+    { 
+      year: '2019', 
+      title: 'High School', 
+      desc: '10 CGPA',
+      icon: FaSchool,
+      category: 'education',
+      completed: true,
+      color: '#f97316', // orange
+      alternate: 'above' // above the road
+    },
+    { 
+      year: '2021', 
+      title: 'Intermediate', 
+      desc: '98.1%',
+      icon: FaGraduationCap,
+      category: 'education',
+      completed: true,
+      color: '#22c55e', // green
+      alternate: 'below' // below the road
+    },
+    { 
+      year: '2024', 
+      title: 'Internship', 
+      desc: 'Texas Instruments',
+      icon: FaBriefcase,
+      category: 'career',
+      completed: true,
+      color: '#3b82f6', // blue
+      alternate: 'above' // above the road
+    },
+    { 
+      year: '2025', 
+      title: 'B.Tech', 
+      desc: 'NIT Raipur',
+      icon: FaUniversity,
+      category: 'education',
+      completed: false,
+      color: '#ef4444', // red
+      alternate: 'below' // below the road
+    },
+    { 
+      year: '2025', 
+      title: 'Texas Instruments', 
+      desc: 'Joined as Developer',
+      icon: FaBriefcase,
+      category: 'career',
+      completed: false,
+      color: '#8b5cf6', // purple
+      alternate: 'above' // above the road
+    },
   ];
 
   return (
@@ -147,37 +192,193 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* New Neon Journey */}
+        {/* 3D Road Map Journey */}
         <motion.div
-          className="neon-journey-wrap"
+          className="roadmap-wrap"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="journey-title">My Journey</h3>
-          <div className="neon-journey">
-            <svg className="neon-path" viewBox="0 0 1000 300" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#06b6d4" />
-                  <stop offset="100%" stopColor="#22d3ee" />
-                </linearGradient>
-              </defs>
-              <path className="trace" d="M 30 250 C 220 120 360 320 520 230 S 820 140 970 200" />
-            </svg>
-            <div className="rocket" aria-hidden />
-            <div className="neon-lane">
-              {journeyData.map(m => (
-                <div key={m.year + m.title} className="mile">
-                  <div className="mile-dot" />
-                  <div className="mile-card">
-                    <span className="year">{m.year}</span>
-                    <strong>{m.title}</strong>
-                    <p>{m.desc}</p>
-                  </div>
-                </div>
-              ))}
+          <h3 className="roadmap-title">My Journey Roadmap</h3>
+          <div className="roadmap-3d-container">
+            <div className="roadmap-3d">
+              {/* 3D Road Path */}
+              <svg className="road-path" viewBox="0 0 800 400" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#1f2937" />
+                    <stop offset="50%" stopColor="#374151" />
+                    <stop offset="100%" stopColor="#1f2937" />
+                  </linearGradient>
+                  <filter id="roadShadow">
+                    <feDropShadow dx="2" dy="4" stdDeviation="3" floodColor="#000000" floodOpacity="0.3"/>
+                  </filter>
+                </defs>
+                {/* Main road path - increased stroke width */}
+                <path 
+                  d="M 50 350 Q 200 200 400 250 Q 600 300 750 200" 
+                  stroke="url(#roadGradient)" 
+                  strokeWidth="30" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  filter="url(#roadShadow)"
+                />
+                {/* Road markings - increased stroke width */}
+                <path 
+                  d="M 50 350 Q 200 200 400 250 Q 600 300 750 200" 
+                  stroke="#ffffff" 
+                  strokeWidth="4" 
+                  fill="none" 
+                  strokeDasharray="20,20"
+                  strokeLinecap="round"
+                />
+              </svg>
+              
+              {/* Map Pins */}
+              <div className="map-pins">
+                {journeyData.map((milestone, index) => (
+                  <motion.div
+                    key={milestone.year + milestone.title}
+                    className={`map-pin ${milestone.completed ? 'completed' : 'pending'} ${milestone.alternate}`}
+                    style={{ '--pin-color': milestone.color } as React.CSSProperties}
+                    initial={{ opacity: 0, y: milestone.alternate === 'above' ? -100 : 100, scale: 0.5 }}
+                    whileInView={{ 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      transition: {
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                        delay: index * 0.4
+                      }
+                    }}
+                    viewport={{ once: true }}
+                    whileHover={{ 
+                      scale: 1.05, 
+                      y: milestone.alternate === 'above' ? -8 : 8,
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10
+                      }
+                    }}
+                  >
+                    {/* Data box - positioned above or below based on alternate */}
+                    <motion.div 
+                      className={`pin-content ${milestone.alternate === 'above' ? 'pin-content-above' : 'pin-content-below'}`}
+                      initial={{ opacity: 0, y: milestone.alternate === 'above' ? -30 : 30, scale: 0.8 }}
+                      whileInView={{ 
+                        opacity: 1, 
+                        y: 0, 
+                        scale: 1,
+                        transition: {
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                          delay: index * 0.4 + 0.3
+                        }
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{ 
+                        y: milestone.alternate === 'above' ? -3 : 3,
+                        scale: 1.02,
+                        transition: {
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 15
+                        }
+                      }}
+                    >
+                      <motion.div 
+                        className="pin-year"
+                        initial={{ scale: 0, rotate: -10 }}
+                        whileInView={{ 
+                          scale: 1, 
+                          rotate: 0,
+                          transition: {
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 15,
+                            delay: index * 0.4 + 0.5
+                          }
+                        }}
+                        viewport={{ once: true }}
+                        whileHover={{ 
+                          scale: 1.05,
+                          rotate: 2,
+                          transition: {
+                            type: "spring",
+                            stiffness: 600,
+                            damping: 10
+                          }
+                        }}
+                      >
+                        {milestone.year}
+                      </motion.div>
+                      <motion.h4 
+                        className="pin-title"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ 
+                          opacity: 1, 
+                          x: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: index * 0.4 + 0.7
+                          }
+                        }}
+                        viewport={{ once: true }}
+                      >
+                        {milestone.title}
+                      </motion.h4>
+                      <motion.p 
+                        className="pin-desc"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ 
+                          opacity: 1, 
+                          x: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: index * 0.4 + 0.9
+                          }
+                        }}
+                        viewport={{ once: true }}
+                      >
+                        {milestone.desc}
+                      </motion.p>
+                    </motion.div>
+
+                    {/* Map Pin Icon - always on the road */}
+                    <motion.div 
+                      className="pin-icon"
+                      initial={{ scale: 0, rotate: -45 }}
+                      whileInView={{ 
+                        scale: 1, 
+                        rotate: -45,
+                        transition: {
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 15,
+                          delay: index * 0.4 + 0.2
+                        }
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: -45,
+                        transition: {
+                          type: "spring",
+                          stiffness: 500,
+                          damping: 10
+                        }
+                      }}
+                    >
+                      <FaMapPin />
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
