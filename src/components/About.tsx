@@ -15,7 +15,7 @@ const About = () => {
     experience: `${profile.experienceYears}+ years`,
     location: profile.location,
     email: profile.email,
-    phone: profile.phone || ''
+    phone: profile.phone || ' ' 
   };
 
   const highlights = [
