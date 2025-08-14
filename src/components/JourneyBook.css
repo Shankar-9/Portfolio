@@ -1,0 +1,357 @@
+.journey-book-container {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.journey-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0b1220;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.book-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1200px;
+  margin: 2rem 0;
+}
+
+.book {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.5s ease;
+}
+
+.book:hover {
+  transform: rotateY(-10deg) rotateX(5deg);
+}
+
+/* Book spine */
+.book-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #6366f1, #3b82f6);
+  transform: translateX(-50%) rotateY(90deg);
+  transform-origin: left center;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Book cover */
+.book-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  border-radius: 8px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-cover:hover {
+  transform: translateZ(10px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.cover-content h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cover-content p {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Book pages */
+.book-pages {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.page-spread {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+.page {
+  flex: 1;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.left-page {
+  margin-right: 1px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.right-page {
+  margin-left: 1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Page curl effect */
+.page-curl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1));
+  transform: rotateY(-90deg);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Journey items */
+.journey-item {
+  text-align: center;
+  max-width: 200px;
+}
+
+.item-year {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.item-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Wind particles */
+.wind-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+}
+
+/* Book controls */
+.book-controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.control-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.control-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auto-play-btn {
+  width: 60px;
+  height: 60px;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.auto-play-btn:hover {
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Page indicators */
+.page-indicators {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.page-dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-dot.active {
+  background: #3b82f6;
+  transform: scale(1.2);
+}
+
+.page-dot:hover {
+  background: #cbd5e1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .book {
+    width: 90vw;
+    height: 300px;
+    transform: rotateY(-5deg) rotateX(5deg);
+  }
+  
+  .journey-title {
+    font-size: 2rem;
+  }
+  
+  .page {
+    padding: 1.5rem;
+  }
+  
+  .item-year {
+    font-size: 2rem;
+  }
+  
+  .item-title {
+    font-size: 1rem;
+  }
+  
+  .item-desc {
+    font-size: 0.8rem;
+  }
+  
+  .book-controls {
+    gap: 0.75rem;
+  }
+  
+  .control-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .auto-play-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book {
+    width: 95vw;
+    height: 250px;
+    transform: none;
+  }
+  
+  .page {
+    padding: 1rem;
+  }
+  
+  .item-year {
+    font-size: 1.5rem;
+  }
+  
+  .item-title {
+    font-size: 0.9rem;
+  }
+  
+  .item-desc {
+    font-size: 0.75rem;
+  }
+  
+  .book-controls {
+    gap: 0.5rem;
+  }
+  
+  .control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .auto-play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+}

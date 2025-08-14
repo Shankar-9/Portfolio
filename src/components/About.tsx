@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
 import './About.css';
 import { profile, about } from '../config/configLoader';
+import JourneyBook from './JourneyBook';
 
 const About = () => {
   const downloadResume = () => {
@@ -121,40 +122,8 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* New Neon Journey */}
-        <motion.div
-          className="neon-journey-wrap"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="journey-title">My Journey</h3>
-          <div className="neon-journey">
-            <svg className="neon-path" viewBox="0 0 1000 300" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#06b6d4" />
-                  <stop offset="100%" stopColor="#22d3ee" />
-                </linearGradient>
-              </defs>
-              <path className="trace" d="M 30 250 C 220 120 360 320 520 230 S 820 140 970 200" />
-            </svg>
-            <div className="rocket" aria-hidden />
-            <div className="neon-lane">
-              {journeyData.map(m => (
-                <div key={m.year + m.title} className="mile">
-                  <div className="mile-dot" />
-                  <div className="mile-card">
-                    <span className="year">{m.year}</span>
-                    <strong>{m.title}</strong>
-                    <p>{m.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        {/* Journey Book */}
+        <JourneyBook journeyData={journeyData} />
       </div>
     </section>
   );
