@@ -1,0 +1,150 @@
+{
+  "profile": {
+    "name": "Shankar Palagani",
+    "role": "Software Developer",
+    "summary": "B.Tech (ECE) student at NIT Raipur (2021–2025, CGPA ~8.8). I build full‑stack apps and applied ML/Computer Vision pipelines; experience interning at Texas Instruments and shipping web solutions.",
+    "location": "India",
+    "email": "palaganigowrishankar8@gmail.com",
+    "phone": "+91 95429 73947",
+    "experienceYears": 1,
+    "resumeUrl": "./Resume.pdf",
+    "profileImage": "./Shankar.jpg",
+    "socials": {
+      "github": "https://github.com/Shankar-9",
+      "linkedin": "https://www.linkedin.com/in/shankar-palagani-1b0a18215/",
+      "twitter": "https://x.com/6076P1938",
+      "instagram": "https://www.instagram.com/srinivas_rao_palagani/",
+      "website": "https://portfolio-livid-psi-63.vercel.app/"
+    },
+    "presentRole": {
+      "company": "Texas Instruments",
+      "role": "Software Developer",
+      "team": "Finance Team",
+      "logo": "./Texas.png",
+      "image": "./Texas.png"
+    }
+  },
+  "about": {
+    "highlights": [
+      {
+        "icon": "FaCode",
+        "title": "Full‑Stack Development",
+        "description": "Building fast, accessible web apps with React, TypeScript, Node/Express and REST APIs. Focus on clean architecture and DX."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "Data, ML & CV",
+        "description": "Practical experience with TensorFlow, OpenCV, and analytics dashboards (SAC). Passionate about turning data into insight."
+      },
+      {
+        "icon": "FaUser",
+        "title": "Finance Engineering",
+        "description": "Currently contributing as a Software Developer in the Finance team at Texas Instruments—reliable tooling and reporting."
+      }
+    ],
+    "journey": [
+      { "year": "2019", "title": "School", "desc": "10 CGPA" },
+      { "year": "2021", "title": "Intermediate", "desc": "98.1%" },
+      { "year": "2024", "title": "Internship", "desc": "Texas Instruments" },
+      { "year": "2025", "title": "B.Tech", "desc": "NIT Raipur" },
+      { "year": "2025", "title": "Texas Instruments", "desc": "Joined as Developer" }
+    ]
+  },
+  "skills": {
+    "languages": [
+      { "name": "Python", "icon": "FaPython", "color": "#3776AB", "projects": ["E-Commerce Platform", "Weather Dashboard"] },
+      { "name": "C", "icon": "SiC", "color": "#A8B9CC", "projects": ["System Programming", "Embedded Systems"] },
+      { "name": "C++", "icon": "SiCplusplus", "color": "#00599C", "projects": ["Algorithm Implementation", "Data Structures"] },
+      { "name": "JavaScript", "icon": "SiJavascript", "color": "#F7DF1E", "projects": ["Weather Dashboard", "Task Management App"] },
+      { "name": "TypeScript", "icon": "SiTypescript", "color": "#3178C6", "projects": ["Task Management App", "E-Commerce Platform"] },
+      { "name": "HTML5", "icon": "FaHtml5", "color": "#E34F26", "projects": ["Weather Dashboard", "Portfolio Website"] },
+      { "name": "CSS3", "icon": "FaCss3Alt", "color": "#1572B6", "projects": ["Portfolio Website", "Weather Dashboard"] },
+      { "name": "SQL (PostgreSQL)", "icon": "SiPostgresql", "color": "#336791", "projects": ["E-Commerce Platform", "REST API Service"] },
+      { "name": "SAP ABAP (Basics)", "icon": "SiSap", "color": "#0FAAFF", "projects": ["Enterprise Systems", "Business Applications"] }
+    ],
+    "frameworks": [
+      { "name": "React.js", "icon": "FaReact", "color": "#61DAFB", "projects": ["E-Commerce Platform", "Task Management App", "Portfolio Website"] },
+      { "name": "Next.js", "icon": "SiNextdotjs", "color": "#000000", "projects": ["Portfolio Website", "E-Commerce Platform"] },
+      { "name": "Node.js", "icon": "FaNodeJs", "color": "#339933", "projects": ["E-Commerce Platform", "REST API Service"] },
+      { "name": "Express.js", "icon": "SiExpress", "color": "#000000", "projects": ["REST API Service", "E-Commerce Platform"] },
+      { "name": "TailwindCSS", "icon": "SiTailwindcss", "color": "#06B6D4", "projects": ["Portfolio Website", "Task Management App"] },
+      { "name": "Firebase", "icon": "SiFirebase", "color": "#FFCA28", "projects": ["Task Management App", "E-Commerce Platform"] }
+    ],
+    "dataML": [
+      { "name": "TensorFlow", "icon": "SiTensorflow", "color": "#FF6F00", "projects": ["Computer Vision Project", "ML Model Training"] },
+      { "name": "OpenCV", "icon": "SiOpencv", "color": "#5C3EE8", "projects": ["Computer Vision Project", "Image Processing"] },
+      { "name": "Pandas", "icon": "SiPandas", "color": "#150458", "projects": ["Data Analysis", "ML Model Training"] },
+      { "name": "NumPy", "icon": "SiNumpy", "color": "#013243", "projects": ["ML Model Training", "Data Analysis"] },
+      { "name": "MongoDB", "icon": "SiMongodb", "color": "#47A248", "projects": ["E-Commerce Platform", "REST API Service"] },
+      { "name": "PostgreSQL", "icon": "SiPostgresql", "color": "#336791", "projects": ["E-Commerce Platform", "REST API Service"] }
+    ],
+    "tools": [
+      { "name": "Git", "icon": "FaGitAlt", "color": "#F05032", "projects": ["All Projects", "Version Control"] },
+      { "name": "GitHub", "icon": "FaGithub", "color": "#181717", "projects": ["All Projects", "Code Repository"] },
+      { "name": "Bitbucket", "icon": "SiBitbucket", "color": "#2684FF", "projects": ["Enterprise Projects", "Team Collaboration"] },
+      { "name": "REST APIs", "icon": "FaNetworkWired", "color": "#0EA5E9", "projects": ["REST API Service", "E-Commerce Platform"] },
+      { "name": "Postman", "icon": "SiPostman", "color": "#FF6C37", "projects": ["API Testing", "REST API Service"] },
+      { "name": "Docker", "icon": "FaDocker", "color": "#2496ED", "projects": ["Containerization", "Deployment"] }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+      "category": "fullstack",
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates and team features.",
+      "technologies": ["React", "Firebase", "TypeScript"],
+      "category": "frontend",
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "A weather application with location-based forecasts and interactive maps.",
+      "technologies": ["JavaScript", "API", "CSS3"],
+      "category": "frontend",
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "REST API Service",
+      "description": "A scalable REST API with authentication, rate limiting, and comprehensive documentation.",
+      "technologies": ["Node.js", "Express", "MongoDB", "JWT"],
+      "category": "backend",
+      "github": "https://github.com",
+      "live": "https://example.com",
+      "featured": false
+    }
+  ],
+  "contact": {
+    "email": "palaganigowrishankar8@gmail.com",
+    "phone": "+91 95429 73947",
+    "location": "India",
+    "emailjs": {
+      "serviceId": "service_7np17uz",
+      "templateOwner": "template_5tmg7h7",
+      "templateAck": "template_g64eacq",
+      "publicKey": "0L3Fl232ZVXE235Z7"
+    }
+  },
+  "navigation": [
+    { "id": "home", "label": "Home" },
+    { "id": "about", "label": "About" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "contact", "label": "Contact" }
+  ]
+}

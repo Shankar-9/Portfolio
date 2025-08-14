@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
-
-// EmailJS configuration provided by user
-const SERVICE_ID = 'service_7np17uz';
-const TEMPLATE_OWNER = 'template_5tmg7h7';
-const TEMPLATE_ACK = 'template_g64eacq';
-const PUBLIC_KEY = '0L3Fl232ZVXE235Z7';
+import { contact, profile } from '../config/configLoader';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -38,8 +33,8 @@ const Contact = () => {
       } as any;
 
       await Promise.all([
-        emailjs.send(SERVICE_ID, TEMPLATE_OWNER, ownerPayload, PUBLIC_KEY),
-        emailjs.send(SERVICE_ID, TEMPLATE_ACK, ackPayload, PUBLIC_KEY),
+        emailjs.send(contact.emailjs.serviceId, contact.emailjs.templateOwner, ownerPayload, contact.emailjs.publicKey),
+        emailjs.send(contact.emailjs.serviceId, contact.emailjs.templateAck, ackPayload, contact.emailjs.publicKey),
       ]);
 
       setStatus('sent');
@@ -53,10 +48,17 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: FaEnvelope, title: 'Email', value: 'palaganigowrishankar8@gmail.com', link: 'mailto:palaganigowrishankar8@gmail.com' },
-    { icon: FaPhone,    title: 'Phone', value: '+91 95429 73947', link: 'tel:+919542973947' },
-    { icon: FaMapMarkerAlt, title: 'Location', value: 'India', link: '#' }
+    { icon: FaEnvelope, title: 'Email', value: contact.email, link: `mailto:${contact.email}` },
+    { icon: FaPhone,    title: 'Phone', value: contact.phone, link: `tel:${contact.phone.replace(/\s/g, '')}` },
+    { icon: FaMapMarkerAlt, title: 'Location', value: contact.location, link: '#' }
   ];
+
+  const socialLinks = [
+    { icon: FaGithub, href: profile.socials.github, label: 'GitHub' },
+    { icon: FaLinkedin, href: profile.socials.linkedin, label: 'LinkedIn' },
+    { icon: FaTwitter, href: profile.socials.twitter, label: 'Twitter' },
+    { icon: FaInstagram, href: profile.socials.instagram, label: 'Instagram' }
+  ].filter((s) => !!s.href);
 
   return (
     <section id="contact" className="contact">
@@ -71,14 +73,46 @@ const Contact = () => {
             <h3>Let's Connect</h3>
             <p>I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
 
-            <div className="contact-details">
-              {contactInfo.map((info, index) => (
-                <motion.a key={info.title} href={info.link} className="contact-item" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }} viewport={{ once: true }} whileHover={{ x: 10 }}>
-                  <div className="contact-icon"><info.icon /></div>
-                  <div className="contact-text"><h4>{info.title}</h4><p>{info.value}</p></div>
-                </motion.a>
-              ))}
-            </div>
+                         <div className="contact-details">
+               {contactInfo.map((info, index) => (
+                 <motion.a key={info.title} href={info.link} className="contact-item" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }} viewport={{ once: true }} whileHover={{ x: 10 }}>
+                   <div className="contact-icon"><info.icon /></div>
+                   <div className="contact-text"><h4>{info.title}</h4><p>{info.value}</p></div>
+                 </motion.a>
+               ))}
+             </div>
+
+             {socialLinks.length > 0 && (
+               <motion.div 
+                 className="social-links" 
+                 initial={{ opacity: 0, y: 20 }} 
+                 whileInView={{ opacity: 1, y: 0 }} 
+                 transition={{ duration: 0.6, delay: 0.7 }} 
+                 viewport={{ once: true }}
+               >
+                 <h4>Follow Me</h4>
+                 <div className="social-icons">
+                   {socialLinks.map((social, index) => (
+                     <motion.a
+                       key={social.label}
+                       href={social.href}
+                       target="_blank"
+                       rel="noreferrer"
+                       className="social-icon"
+                       initial={{ opacity: 0, scale: 0.8 }}
+                       whileInView={{ opacity: 1, scale: 1 }}
+                       transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                       viewport={{ once: true }}
+                       whileHover={{ scale: 1.1, y: -2 }}
+                       whileTap={{ scale: 0.95 }}
+                       aria-label={social.label}
+                     >
+                       <social.icon />
+                     </motion.a>
+                   ))}
+                 </div>
+               </motion.div>
+             )}
           </motion.div>
 
           <motion.div className="contact-form" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }} viewport={{ once: true }}>

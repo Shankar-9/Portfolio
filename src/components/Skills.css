@@ -5,7 +5,84 @@
 .skills-section { margin-bottom: 2rem; }
 .skills-section h3 { color: #0b1220; margin: 0 0 .75rem; font-size: 1.2rem; font-weight: 800; }
 .skills-icons { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
-.icon-card { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; box-shadow: 0 8px 18px rgba(2,6,23,.05); transition: transform .15s ease; }
+.icon-card { 
+  background: #ffffff; 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  padding: 1rem; 
+  text-align: center; 
+  box-shadow: 0 8px 18px rgba(2,6,23,.05); 
+  transition: transform .15s ease; 
+  position: relative; 
+  cursor: pointer; 
+}
 .icon-card:hover { transform: translateY(-2px); }
 .icon { font-size: 2rem; line-height: 1; display: grid; place-items: center; margin-bottom: .5rem; }
 .icon-name { color: var(--text); font-weight: 600; font-size: .95rem; }
+
+/* Skill Tooltip Styles */
+.skill-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.tooltip-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tooltip-project {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #1e293b;
+}
+
+/* Mobile responsiveness for tooltips */
+@media (max-width: 768px) {
+  .skill-tooltip {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    transform: none;
+    white-space: normal;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .tooltip-arrow {
+    display: none;
+  }
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
+import { navigation } from '../config/configLoader';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,13 +20,7 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
-  ];
+  const navItems = navigation;
 
   return (
     <motion.header

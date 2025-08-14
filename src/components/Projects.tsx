@@ -2,53 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
+import { projects } from '../config/configLoader';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selected, setSelected] = useState<any>(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "fullstack",
-      github: "https://github.com",
-      live: "https://example.com",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates and team features.",
-      technologies: ["React", "Firebase", "TypeScript"],
-      category: "frontend",
-      github: "https://github.com",
-      live: "https://example.com",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "A weather application with location-based forecasts and interactive maps.",
-      technologies: ["JavaScript", "API", "CSS3"],
-      category: "frontend",
-      github: "https://github.com",
-      live: "https://example.com",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "REST API Service",
-      description: "A scalable REST API with authentication, rate limiting, and comprehensive documentation.",
-      technologies: ["Node.js", "Express", "MongoDB", "JWT"],
-      category: "backend",
-      github: "https://github.com",
-      live: "https://example.com",
-      featured: false
-    }
-  ];
+
 
   const filters = [
     { id: 'all', label: 'All Projects' },

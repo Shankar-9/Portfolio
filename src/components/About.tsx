@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaUser, FaCode, FaLightbulb } from 'react-icons/fa';
+import { FaDownload } from 'react-icons/fa';
 import './About.css';
-import { profile } from '../profile';
+import { profile, about } from '../config/configLoader';
 
 const About = () => {
   const downloadResume = () => {
@@ -18,34 +18,8 @@ const About = () => {
     phone: profile.phone || ''
   };
 
-  const highlights = [
-    {
-      icon: FaCode,
-      title: 'Full‑Stack Development',
-      description:
-        'Building fast, accessible web apps with React, TypeScript, Node/Express and REST APIs. Focus on clean architecture and DX.'
-    },
-    {
-      icon: FaLightbulb,
-      title: 'Data, ML & CV',
-      description:
-        'Practical experience with TensorFlow, OpenCV, and analytics dashboards (SAC). Passionate about turning data into insight.'
-    },
-    {
-      icon: FaUser,
-      title: 'Finance Engineering',
-      description:
-        'Currently contributing as a Software Developer in the Finance team at Texas Instruments—reliable tooling and reporting.'
-    }
-  ];
-
-  const journeyData = [
-    { year: '2019', title: 'School', desc: '10 CGPA' },
-    { year: '2021', title: 'Intermediate', desc: '98.1%' },
-    { year: '2024', title: 'Internship', desc: 'Texas Instruments' },
-    { year: '2025', title: 'B.Tech', desc: 'NIT Raipur' },
-    { year: '2025', title: 'Texas Instruments', desc: 'Joined as Developer' },
-  ];
+  const highlights = about.highlights;
+  const journeyData = about.journey;
 
   return (
     <section id="about" className="about">
