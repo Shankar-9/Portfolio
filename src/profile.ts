@@ -33,7 +33,7 @@ export const profile: Profile = {
   email: 'palaganigowrishankar8@gmail.com',
   phone: '+91 95429 73947',
   experienceYears: 1,
-  resumeUrl: '/Resume.pdf',
+  resumeUrl: './Resume.pdf',
   socials: {
     github: 'https://github.com/Shankar-9',
     linkedin: 'https://www.linkedin.com/in/shankar-palagani-1b0a18215/',

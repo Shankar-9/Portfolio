@@ -114,7 +114,7 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="/Resume.pdf" download style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '.5rem' }}>
+              <a href="./Resume.pdf" download style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '.5rem' }}>
                 <FaDownload /> Download Resume
               </a>
             </motion.button>
