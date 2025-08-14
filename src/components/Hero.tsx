@@ -81,7 +81,7 @@ const Hero = () => {
 
         <motion.div className="hero-right" initial={{ opacity: 0, x: 18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <div className="hex-frame">
-            <img src="/Shankar.jpg" alt={profile.name} />
+            <img src="./Shankar.jpg" alt={profile.name} />
           </div>
         </motion.div>
       </div>

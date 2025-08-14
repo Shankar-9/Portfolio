@@ -44,7 +44,7 @@ export const profile: Profile = {
     company: 'Texas Instruments',
     role: 'Software Developer',
     team: 'Finance Team',
-    logo: '../public/Texas.png',
-    image: '../public/Texas.png'
+    logo: './public/Texas.png',
+    image: './public/Texas.png'
   }
 }
